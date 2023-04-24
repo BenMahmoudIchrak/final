@@ -1,0 +1,38 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+    <h1>Pointderelais index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdPointderelais</th>
+                <th>AdressePointderelais</th>
+                <th>Region</th>
+                <th>Horaire</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pointderelai in pointderelais %}
+            <tr>
+                <td>{{ pointderelai.idPointderelais }}</td>
+                <td>{{ pointderelai.adressePointderelais }}</td>
+                <td>{{ pointderelai.region }}</td>
+                <td>{{ pointderelai.horaire }}</td>
+                <td>
+                    <a href="{{ path('app_pointderelais_front_show', {'idPointderelais': pointderelai.idPointderelais}) }}">show</a>
+                    <a href="{{ path('app_pointderelais_front_edit', {'idPointderelais': pointderelai.idPointderelais}) }}">edit</a>
+                     <a href="{{ path('app_pointderelais_index') }}">Voir les pts dans la partie back</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pointderelais_front_new') }}">Create new</a>
+{% endblock %}

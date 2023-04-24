@@ -1,0 +1,16 @@
+{{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+
+
+{{ form_widget(form.objectif,{ 'attr':{'class':'form-control col-md-4','placeholder':'objectif *'}}) }}
+{{ form_errors(form.objectif) }}
+
+    {{ form_widget(form.text,{ 'attr':{'class':'form-control col-md-4','placeholder':'text *'}}) }}
+{{ form_errors(form.text) }}
+
+ 
+
+
+{{ form_rest(form) }}
+<div class="col-md-offset-5" > <button class="btn btn-primary mt30 btn-black ">{{ button_label|default('Save') }}</button> </div>
+
+{{ form_end(form) }}

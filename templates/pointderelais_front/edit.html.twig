@@ -1,0 +1,11 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+    <h1>Edit Pointderelais</h1>
+
+    {{ include('pointderelais_front/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pointderelais_front_index') }}">back to list</a>
+
+    {{ include('pointderelais_front/_delete_form.html.twig') }}
+{% endblock %}
